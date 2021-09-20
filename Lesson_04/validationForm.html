@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="validationForm.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="formBox">
+        <form name="regform" onsubmit="return formValidation(event)">
+            <h2>Ваше имя:</h2>
+            <input type="text" name="name" class="inputName"><br>
+            <span class="nameError"></span><br>
+
+            <h2>Ваш номер телефона:</h2>
+            <input type="text" name="telephone" class="inputTel" value='+7(000)000-00-00' onclick="value = ''"><br>
+            <span class="telError"></span><br>
+
+            <h2>E-Mail:</h2>
+            <input type="email" name="email" class="inputMail"><br>
+            <span class="mailError"></span><br>
+
+            <h2>Комментарий:</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea><br>
+
+            <button class="submit">
+                <h3>Отправить</h3>
+            </button>
+
+            <h2 id="inputResult"></h2>
+        </form>
+    </div>
+
+</body>
+
+</html>
