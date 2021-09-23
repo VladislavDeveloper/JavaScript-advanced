@@ -14,12 +14,38 @@
 
             <div class="container">
                 <div class="headerContent">
-                    <div class="logo">
+                    <div class="leftHeader">
+
+                        <div class="logo">
                         <h2>MY-Shop</h2>
+                        </div>
+
+                        <form action="#" class="search-form" @submit.prevent="search">
+                            <input class="searchForm" type="text" v-model.lazy='userSearch'>
+                            <button class="searchButton" type="submit">Найти</button>
+                        </form>
+
                     </div>
+                    
     
-                    <div class="rightHeader"><button class="btn-cart" type="button">Крзина</button>
-                        <div class="cartBox invisible">
+                    <div class="rightHeader">
+                        <button v-on:click='showBasket = !showBasket' class="btn-cart" type="button">Корзина</button>
+                        <div class="cartBox" v-show='showBasket'>
+                            <h3 v-if='!productsInBasket.length'>Товары в корзине отсутствуют :(</h3>
+
+                            <div class="cart-item" v-for='product of productsInBasket' :key='product.id_product'>
+                                <img :src="basketImage" alt="Image" width ="150px">
+                                
+                                
+                                <div class="right-block">
+                                    <h4 class="product-title">{{product.product_name}}</h4>
+                                    <h5 class="product-quantity">Количество: {{product.quantity}}</h5>
+                                    <h5 class="product-single-price">{{product.price}} за ед.</h5>
+                                    <p class="product-price">{{product.quantity * product.price}} ₽</p>
+                                    <button class="del-btn" v-on:click='deleteItem(product)'>Удалить</button>
+                                </div>
+                            </div>
+
                             <button class="checkOut">Оформить заказ</button>
                         </div>
                     </div>
@@ -31,7 +57,7 @@
         <main>
             <div class="container">
                 <div class="products">
-                    <div class="productItem" v-for='product of products' :key='product.id_product'>
+                    <div class="productItem" v-for='product of filteredItems' :key='product.id_product'>
                         <img :src="imgCatalog" alt="no image">
                         <h3>{{product.product_name}}</h3>
                         <p>{{product.price}}USD</p>
