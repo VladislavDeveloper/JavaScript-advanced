@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MY-Shop</title>
+</head>
+<body>
+    <div id="app">
+
+        <header>
+
+            <div class="container">
+                <div class="headerContent">
+                    <div class="logo">
+                        <h2>MY-Shop</h2>
+                    </div>
+    
+                    <div class="rightHeader"><button class="btn-cart" type="button">Крзина</button>
+                        <div class="cartBox invisible">
+                            <button class="checkOut">Оформить заказ</button>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </header>
+        <main>
+            <div class="container">
+                <div class="products">
+                    <div class="productItem" v-for='product of products' :key='product.id_product'>
+                        <img :src="imgCatalog" alt="no image">
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}}USD</p>
+                        <button class="buy-btn" @click='addProduct(product)'>Купить</button>
+                    </div>
+                </div>
+                <div class="input"></div>
+            </div>
+    
+    
+        </main>
+
+        <footer>
+            <div class="container">
+                &copy; Redin Vladislav
+            </div>
+        </footer>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
