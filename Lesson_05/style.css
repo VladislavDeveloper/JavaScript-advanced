@@ -9,7 +9,29 @@ header {
     padding: 20px 18px;
     box-sizing: border-box;
 }
-
+.leftHeader{
+    display: flex;
+    align-items: center;
+}
+.searchForm{
+    margin-left: 20px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+    height: 27px;
+}
+.searchButton{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: #857e7e;
+    color: white;
+    border: none;
+    height: 30px;
+    cursor: pointer;
+}
+.searchButton:hover{
+    background: #807474;
+}
 .headerContent {
     display: flex;
     justify-content: space-between;
