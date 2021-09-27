@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/mainStyle.css">
+    <title>MY-Shop</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="left-header">
+                        <div class="logo">MY-SHOP</div>
+                        <search></search>
+                    </div>
+                    <div class="right-header">
+                        <cart ref='cart'></cart>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <server-error></server-error>
+                <products ref='products'></products>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container"> &copy; Redin Vladislav</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="componentsJS/products.js"></script>
+    <script src="componentsJS/cart.js"></script>
+    <script src="componentsJS/search.js"></script>
+    <script src="componentsJS/server-error.js"></script>
+    <script src="componentsJS/main.js"></script>
+</body>
+
+</html>
